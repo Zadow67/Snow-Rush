@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cirv5p0s3ixq"]
+
+[ext_resource type="AudioStream" uid="uid://da1mrg35nqofc" path="res://assets/audio/relaxing winter town theme (original video game soundtrack).mp3" id="1_f6gl3"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=579540113]
+stream = ExtResource("1_f6gl3")
+volume_db = -7.0
+autoplay = true

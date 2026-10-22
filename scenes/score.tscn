@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bj3nr8hhwfnph"]
+
+[ext_resource type="Script" uid="uid://iyaxbgxuksoj" path="res://scripts/score.gd" id="1_plgac"]
+[ext_resource type="Texture2D" uid="uid://cydindeyubh3l" path="res://assets/art/sprites/Test flower.png" id="2_lew60"]
+[ext_resource type="FontFile" uid="uid://bdvyd33dkxmdj" path="res://assets/fonts/Funland.otf" id="3_68bkv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
+line_spacing = 0.0
+font = ExtResource("3_68bkv")
+font_size = 30
+
+[node name="Score" type="Control" unique_id=1681710665]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_plgac")
+
+[node name="Panel" type="Panel" parent="." unique_id=1130336841]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -126.0
+offset_top = 26.0
+offset_right = -26.0
+offset_bottom = 79.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2027630628]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -125.0
+offset_top = 36.0
+offset_right = -88.0
+offset_bottom = 69.0
+grow_horizontal = 0
+texture = ExtResource("2_lew60")
+flip_h = true
+
+[node name="Label" type="Label" parent="." unique_id=1680817952]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_top = 32.0
+offset_right = -31.0
+offset_bottom = 72.0
+grow_horizontal = 0
+text = "---"
+label_settings = SubResource("LabelSettings_xrivr")
+horizontal_alignment = 1
+vertical_alignment = 1

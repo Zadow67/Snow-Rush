@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://da1mrg35nqofc"
+path="res://.godot/imported/relaxing winter town theme (original video game soundtrack).mp3-b8a3bb9c720127326ad423be2f6ac0ab.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/relaxing winter town theme (original video game soundtrack).mp3"
+dest_files=["res://.godot/imported/relaxing winter town theme (original video game soundtrack).mp3-b8a3bb9c720127326ad423be2f6ac0ab.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

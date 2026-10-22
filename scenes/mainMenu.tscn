@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://5v3hcmrgnfvf"]
+
+[ext_resource type="Texture2D" uid="uid://dbailyfqosm80" path="res://assets/art/sprites/Screenshot 2026-10-21 152541.png" id="1_3d1i7"]
+[ext_resource type="Script" uid="uid://dp8bnjogh8klu" path="res://scripts/main_menu.gd" id="1_48ign"]
+[ext_resource type="FontFile" uid="uid://bdvyd33dkxmdj" path="res://assets/fonts/Funland.otf" id="2_48ign"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xrivr"]
+texture = ExtResource("1_3d1i7")
+modulate_color = Color(0.48700923, 0.48700923, 0.4870091, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njqwk"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0.66, 2.125)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3d1i7"]
+bg_color = Color(0.39181867, 0.39181864, 0.39181864, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0.66, 2.125)
+
+[node name="Control" type="Control" unique_id=1724730887]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48ign")
+
+[node name="Panel" type="Panel" parent="." unique_id=1810854980]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xrivr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1574573398]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.25
+offset_top = -88.5
+offset_right = 181.25
+offset_bottom = 88.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=473018042]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_njqwk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3d1i7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_njqwk")
+theme_override_styles/focus = SubResource("StyleBoxFlat_njqwk")
+text = "Start game"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=680379895]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_njqwk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_njqwk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_njqwk")
+theme_override_styles/focus = SubResource("StyleBoxFlat_njqwk")
+text = "Exit Game"
+
+[node name="Snow Rush" type="Label" parent="." unique_id=914482095]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -164.0
+offset_right = 42.5
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.25882354, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.8114041, 0.46014124, 0.22557673, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_48ign")
+theme_override_font_sizes/font_size = 50
+text = "Snow Rush"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

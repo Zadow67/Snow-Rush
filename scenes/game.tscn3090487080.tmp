@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c7hex8e1xxkuq"]
+
+[ext_resource type="PackedScene" uid="uid://beq8o7eh7owqb" path="res://scenes/map.tscn" id="1_lnu2h"]
+[ext_resource type="Script" uid="uid://4815once00i8" path="res://scripts/game.gd" id="1_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://ysfepaf3qies" path="res://scenes/player.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://b6l8mjweefqxd" path="res://scenes/platform.tscn" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dxhv5pxoxgg8u" path="res://scenes/snowman.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cbrcyp5yshtae" path="res://scenes/killzone.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://dsqkrhnju5j8h" path="res://scenes/hearts_container.tscn" id="6_p57ef"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fvwod"]
+
+[node name="Game" type="Node2D" unique_id=28409529]
+script = ExtResource("1_u5sy4")
+
+[node name="map" parent="." unique_id=1546576778 instance=ExtResource("1_lnu2h")]
+position = Vector2(-55, -65)
+
+[node name="player" parent="." unique_id=645762755 instance=ExtResource("1_yqjtg")]
+position = Vector2(-52, -84)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=196208906]
+zoom = Vector2(4, 4)
+limit_bottom = 110
+limit_smoothed = true
+
+[node name="Platform" parent="." unique_id=1971029284 instance=ExtResource("2_lnu2h")]
+position = Vector2(32, -105)
+
+[node name="Killzone" parent="." unique_id=1000706522 instance=ExtResource("5_iywne")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=2039600246]
+position = Vector2(-41, 55)
+shape = SubResource("WorldBoundaryShape2D_fvwod")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=762961609]
+
+[node name="HeartsContainer" parent="CanvasLayer" unique_id=376316495 instance=ExtResource("6_p57ef")]
+unique_name_in_owner = true
+offset_left = 6.0
+offset_right = 181.0
+offset_bottom = 27.0
+
+[node name="Snowman" parent="." unique_id=790104008 instance=ExtResource("4_lbhrr")]
+position = Vector2(34, -81)

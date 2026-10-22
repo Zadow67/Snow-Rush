@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dta4buh7b4y1a"]
+
+[ext_resource type="Script" uid="uid://b5uxqd7huktb6" path="res://scripts/snow_flower.gd" id="1_sifrs"]
+[ext_resource type="Texture2D" uid="uid://cydindeyubh3l" path="res://assets/art/sprites/Test flower.png" id="1_u3k1q"]
+[ext_resource type="AudioStream" uid="uid://bde4gryd207ng" path="res://assets/audio/collect.ogg" id="3_etc53"]
+
+[sub_resource type="Animation" id="Animation_sifrs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_etc53"]
+resource_name = "idle"
+length = 1.0000125
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.375, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(-1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mdk7n"]
+_data = {
+&"RESET": SubResource("Animation_sifrs"),
+&"idle": SubResource("Animation_etc53")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+radius = 8.0
+
+[node name="snowFlower" type="Area2D" unique_id=2054147102]
+script = ExtResource("1_sifrs")
+
+[node name="TestFlower" type="Sprite2D" parent="." unique_id=1351833106]
+texture = ExtResource("1_u3k1q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TestFlower" unique_id=809895440]
+libraries/ = SubResource("AnimationLibrary_mdk7n")
+autoplay = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1002511473]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_xrivr")
+
+[node name="sfx_collect" type="AudioStreamPlayer" parent="." unique_id=1538019137]
+stream = ExtResource("3_etc53")
+volume_db = -15.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
